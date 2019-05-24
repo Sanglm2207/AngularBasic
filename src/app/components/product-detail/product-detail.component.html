@@ -1,0 +1,61 @@
+<!-- <div class="row">
+  <div class="col-4">
+    <img src="{{product.image}}" alt="" class="img-fluid">
+  </div>
+  <div class="col-8">
+    <h2> {{ product.name }} Details</h2>
+    <div class="form-group">
+      <label>Name:
+        <input  [(ngModel)]="product.name" placeholder="name" class="form-control"/>
+      </label>
+    </div>
+      <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div> -->
+<div class="card" style="width: 100%;">
+    
+  <div class="card-body">
+      <div class="row">
+          <div class="col-4"><img src="{{product.image}}" alt="..." class="img-thumbnail"></div>
+          <div class="col-8">
+              <h5 class="card-title">Mã Sản Phẩm: {{product.id}}</h5>
+              <h5 class="card-title">Tên Sản Phẩm: {{product.name}}</h5>
+              <h5 class="card-title">Mô tả: {{product.description}}</h5>
+              <h5 class="card-title">Giá Khuyến mãi: {{product.priceSale}}</h5>
+              <h5 class="card-title">Giá ban đầu: {{product.priceRegular}}</h5>
+              <h5 class="card-title">Trạng thái sản phẩm: {{product.status==true?"Còn Hàng":"Hết Hàng"}}</h5>
+          </div>
+          
+      </div>
+  </div>
+</div>
+<form>
+  <div class="form-group">      
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">   
+  </div>
+  <div class="form-group">      
+    <label for="exampleInputEmail1">Description</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name" [(ngModel)]="product.description  " [ngModelOptions]="{standalone: true}">   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Price Sale</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Price Sale" [(ngModel)]="product.priceSale" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Price Regular</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Price Regular" [(ngModel)]="product.priceRegular" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Price Regular</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Price Regular" [(ngModel)]="product.priceRegular" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox"  id="inlineRadio2" value=""
+      [(ngModel)]="product.status" name="status" required #productStatus="ngModel">
+    <label class="form-check-label" >Còn Hàng</label>
+  </div>
+    <br>
+    <button type="button" class="btn btn-primary" style="width: 100px;" (click)="save(product)" data-dismiss="modal">Edit</button>
+</form>
+

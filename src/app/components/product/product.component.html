@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-5">
+      <div class="sidebar-categories">
+        <div class="head">Product Category</div>
+        <ul class="main-categories">
+          <li class="main-nav-list"><a href="#">Football<span class="number">(29)</span></a></li>
+          <li class="main-nav-list"><a href="#">Running<span class="number">(50)</span></a></li>
+          <li class="main-nav-list"><a href="#">Basketball<span class="number">(30)</span></a></li>
+          <li class="main-nav-list"><a href="#">Training<span class="number">(19)</span></a></li>
+          <li class="main-nav-list"><a href="#">Nite Jogger<span class="number">(40)</span></a></li>
+
+        </ul>
+      </div>
+      <div class="sidebar-filter mt-50">
+        <div class="top-filter-head">Product Filters</div>
+        <div class="common-filter">
+          <div class="head">Brands</div>
+          <form action="#">
+            <ul>
+              <li><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
+            </ul>
+          </form>
+        </div>
+        <div class="common-filter">
+          <div class="head">Color</div>
+          <form action="#">
+            <ul>
+              <li><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
+                  Leather<span>(29)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
+                  with red<span>(19)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
+              <li><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
+            </ul>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="col-xl-9 col-lg-8 col-md-7">
+      <!-- Start Filter Bar -->
+      <div class="filter-bar d-flex flex-wrap align-items-center">
+        <div class="sorting">
+          <select>
+            <option value="1">Mặc định</option>
+            <option value="1">Giá từ cao đến thấp</option>
+            <option value="1">Giá từ thấp đến cao</option>
+          </select>
+        </div>
+        <div class="sorting mr-auto">
+          <select>
+            <option value="1">Show 10</option>
+            <option value="1">Show 50</option>
+            <option value="1">Show 100</option>
+          </select>
+        </div>
+
+
+      </div>
+      <!-- End Filter Bar -->
+      <!-- Start Best Seller -->
+      <section class="lattest-product-area pb-40 category-list">
+        <div class="row">
+            <div class="col-4" *ngFor="let product of products" style="margin-top: 30px;">
+                <div class="card">
+                  <div class="shadow-lg bg-white rounded">
+                    <img src="{{product.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-title">{{product.name | uppercase}} <span class="badge badge-success">New</span></p>
+                      <div class="row" id="price">
+                        <p class="priceSale">{{product.priceSale}} USD</p>
+                        <p class="priceRegular">{{product.priceRegular}} USD</p>
+                      </div>
+                      <div class="voting">
+                        <div class="row">
+                          <div class="star-list">
+                            <i class="fas fa-star" id="vote-star"></i>
+                            <i class="fas fa-star" id="vote-star"></i>
+                            <i class="fas fa-star" id="vote-star"></i>
+                            <i class="fas fa-star" id="vote-star"></i>
+                            <i class="fas fa-star" id="vote-star"></i>
+                          </div>
+                          <div class="vote-text">(200 đánh giá)</div>
+                        </div>
+                      </div>
+                      <a class="stretched-link" routerLink="/product/{{product.id}}" style="margin-right: 10px;">Xem thêm</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- End Best Seller -->
+      <!-- Start Filter Bar -->
+      <div class="filter-bar d-flex flex-wrap align-items-center">
+        <div class="sorting mr-auto">
+          <select>
+            <option value="1">Show 10</option>
+            <option value="1">Show 50</option>
+            <option value="1">Show 100</option>
+          </select>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                 <li class="page-item"><a class="page-link" href="#">2</a></li>
+                 <li class="page-item"><a class="page-link" href="#">3</a></li>
+                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
+           </ul>
+         </nav>
+      </div>
+      <!-- End Filter Bar -->
+    </div>
+  </div>
+</div>
+

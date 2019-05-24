@@ -1,0 +1,36 @@
+<div class="container">
+  <app-slide-show></app-slide-show>
+  
+     <h3 style="text-align:center; margin-top: 30px;">LATEST PRODUCTS</h3>
+
+  <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let product of products" style="margin-top: 30px;">
+        <div class="card">
+          <div class="shadow-lg bg-white rounded">
+            <img src="{{product.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-title">{{product.name | uppercase}} <span class="badge badge-success">New</span></p>
+              <div class="row" id="price">
+                <p class="priceSale">{{product.priceSale}} USD</p>
+                <p class="priceRegular">{{product.priceRegular}} USD</p>
+              </div>
+              <div class="voting">
+                <div class="row">
+                  <div class="star-list">
+                    <i class="fas fa-star" id="vote-star"></i>
+                    <i class="fas fa-star" id="vote-star"></i>
+                    <i class="fas fa-star" id="vote-star"></i>
+                    <i class="fas fa-star" id="vote-star"></i>
+                    <i class="fas fa-star" id="vote-star"></i>
+                  </div>
+                  <div class="vote-text">(200 đánh giá)</div>
+                </div>
+              </div>
+              <div class="alert alert-danger" role="alert">Hết Hàng</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

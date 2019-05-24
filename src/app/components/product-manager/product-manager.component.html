@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="jumbotron">
+      <app-add-product></app-add-product>
+  </div>
+
+<hr>
+
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price Regular</th>
+                <th scope="col">Price Sale</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td><img src="{{product.image}}" alt="" width="160px" height="160px"></td>
+                <td>  <a routerLink="/product/{{product.id}}" class="text-reset">{{product.name}}</a></td>
+                <td>{{product.description}}</td>
+                <td>{{product.priceSale}}</td>
+                <td>{{product.priceRegular}}</td>
+                <td>{{product.status==true?"Còn Hàng":"Hết Hàng"}}</td>
+                <td> <button type="button" class="btn btn-danger"  (click)="deleteItem(product)">Delete</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-success" routerLink="/product/{{product.id}}">Detail</button></td>
+              </tr>
+            </tbody>
+          </table>
+    
